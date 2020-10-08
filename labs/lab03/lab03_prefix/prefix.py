@@ -14,5 +14,8 @@ def prefix_search(dictionary, key_prefix):
     for key, value in dictionary.items():
         if key.startswith(key_prefix):
             new_dic[key] = value
+            
+    if not new_dic:
+        raise KeyError("Not a prefix for any key.")
     
     return new_dic
