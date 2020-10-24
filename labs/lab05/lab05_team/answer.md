@@ -1,0 +1,3 @@
+1. Communication and cooperation. Working as a team with gitlab is harder than I expected. Although git is a powerful tool, it can not solve every problem for us. There are many cases we need to communicate and decide how to solve confilict or how to keep our code style consistent, which is time-consumming.
+
+2. Increasing efficiency in cooperation. In the due date of iteration 1, we spent a whole day on merging our data file and make changes to our own modules. But we finally failed to submit on time. I think we should learn how to cooperate under git and gitlab. It helps us save time.
