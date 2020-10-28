@@ -35,26 +35,34 @@ def test_url(url):
 
 
 def test_name_add(url):
-    requests.post(f"{url}/name/add", json={'name': 'Ryan'})
-    res = requests.get(f"{url}/names")
+    res = requests.post(f"{url}/name/add", json={'name': 'Ryan'})
+    assert res.status_code == 200
+    res = requests.get(f"{url}/name/get")
+    assert res.status_code == 200
     names = res.json()
     assert names == {'names': ['Ryan']}
 
 
 def test_names(url):
-    requests.post(f"{url}/name/add", json={'name': 'Ryan'})
-    res = requests.get(f"{url}/names")
+    res = requests.post(f"{url}/name/add", json={'name': 'Ryan'})
+    assert res.status_code == 200
+    res = requests.get(f"{url}/name/get")
+    assert res.status_code == 200
     names = res.json()
     assert names == {'names': ['Ryan']}
 
 
 def test_name_remove(url):
-    requests.post(f"{url}/name/add", json={'name': 'Ryan'})
-    res = requests.get(f"{url}/names")
+    res = requests.post(f"{url}/name/add", json={'name': 'Ryan'})
+    assert res.status_code == 200
+    res = requests.get(f"{url}/name/get")
+    assert res.status_code == 200
     names = res.json()
     assert names == {'names': ['Ryan']}
 
     res = requests.delete(f"{url}/name/remove", json={'name': 'Ryan'})
-    res = requests.get(f"{url}/names")
+    assert res.status_code == 200
+    res = requests.get(f"{url}/name/get")
+    assert res.status_code == 200
     names = res.json()
     assert names == {'names': []}

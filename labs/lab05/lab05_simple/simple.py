@@ -13,8 +13,8 @@ def name_add():
     return dumps({})
 
 
-@app.route('/names', methods=['GET'])
-def name():
+@app.route('/name/get', methods=['GET'])
+def name_get():
     return dumps({'names': names})
 
 
