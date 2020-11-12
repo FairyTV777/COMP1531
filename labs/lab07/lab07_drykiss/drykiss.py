@@ -6,9 +6,7 @@ def product(my_list):
 
 def get_list():
     letters = ['a', 'b', 'c', 'd', 'e']
-    my_list = []
-    for i in range(len(letters)):
-        my_list.append(int(input(f"Enter {letters[i]}: ")))
+    my_list = [int(input(f"Enter {letters[i]}: ")) for i in range(len(letters))]
     return my_list
 
 if __name__ == '__main__':
